@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=0">
+    <title>响应式</title>
+    <link rel="stylesheet" type="text/css" href="./common.css" />
+    <link rel="stylesheet" type="text/css" href="./根据设计图输出rem.css" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            min-width: 240px;
+            padding-top: 42px;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        #box {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #222;
+        }
+
+        .box-son {
+            display: flex;
+            justify-content: space-evenly;
+            width: 90%;
+            height: 42px;
+        }
+
+        .box-son a {
+            color: #9d9d9d !important;
+            font-size: 14px;
+        }
+
+        .box-l {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .box-l a:first-of-type {
+            font-size: 18px;
+        }
+
+        .box-l a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 16px;
+        }
+
+        .box-r {
+            line-height: 42px;
+        }
+
+        .list {
+            display: none;
+        }
+
+        #content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70%;
+            padding-top: 70px;
+            margin: 0 auto;
+        }
+
+        .content-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 55%;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .content-title h2 {
+            font-size: 40px;
+        }
+
+        .content-title p {
+            font-size: 14px;
+        }
+
+        .container {
+            margin-top: 30px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 315px;
+            height: 370px;
+            margin-top: 35px;
+            border: 1px solid #eeeeee;
+            padding: 5px;
+        }
+
+        .item-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px 10px 0;
+        }
+
+        .item-content h5 {
+            align-self: center;
+            font-size: 25px;
+            color: #337ab7;
+        }
+
+        .item-content p {
+            align-self: center;
+        }
+
+        .item-text {
+            margin-top: 15px;
+        }
+
+        .hidde-box {
+            position: fixed;
+            top: 50px;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 100%;
+            height: 358px;
+            padding-left: 16px;
+            border-top: 1px solid #101010;
+            background-color: #222222;
+            opacity: 0;
+        }
+
+        .hidde-box::before {
+            content: '';
+            position: fixed;
+            top: 49px;
+            width: 100%;
+            height: 1px;
+            background-color: #393939;
+        }
+
+        .hidde-box li {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-grow: 1;
+        }
+
+        .hidde-box li a {
+            font-size: 15px;
+        }
+
+        .slideDwon {
+            animation: show 1s ease;
+            animation-fill-mode: both;
+        }
+
+        .slideUp {
+            animation: hide 1s ease;
+            animation-fill-mode: both;
+        }
+
+        @keyframes show {
+            0% {
+                height: 0;
+                opacity: 0;
+            }
+
+            100% {
+                height: 358px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes hide {
+            0% {
+                height: 358px;
+                opacity: 1;
+            }
+
+            100% {
+                height: 0;
+                opacity: 0;
+            }
+        }        
+
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="box-son">
+            <div class="box-l">
+                <a href="javascript:void(0);">Bootstap中文网</a>
+                <a href="javascript:void(0);">Bootstap3中文文档</a>
+                <a href="javascript:void(0);">Bootstrap4中文文档</a>
+                <a href="javascript:void(0);">Sass教程</a>
+                <a href="javascript:void(0);">Less教程</a>
+                <a href="javascript:void(0);">JQuery API</a>
+                <a href="javascript:void(0);">网站实例</a>
+            </div>
+            <div class="box-r">;
+                <a href="javascript:void(0);">关于</a>
+            </div>
+            <div class="list">
+                <div class="hidden-list"><img src="./sort.svg" /></div>
+                <ul class="hidde-box">
+                   <li><a href="javascript:void(0);">BootsBootstap3中文文档</a></li> 
+                   <li><a href="javascript:void(0);">BootstBootstrap4中文文档</a></li>
+                   <li><a href="javascript:void(0);">Sass教程</a></li>
+                   <li><a href="javascript:void(0);">Less教程</a></li>
+                   <li><a href="javascript:void(0);">JQuery API</a></li>
+                   <li><a href="javascript:void(0);">网站实例</a></li> 
+                   <li><a href="javascript:void(0);">关于</a></li> 
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="banner">
+        <div class="banner-content">
+            <h1>Bootstrap</h1>
+            <h2>简洁、直观、强悍的前端开发框架，让web开发更迅速、简单。</h2>
+            <button>Bootstrap3中文文档(v3.3.7)</button>
+            <p>Bootstrap2中文文档(v2.3.2)</p>
+        </div>
+    </div>
+    <div id="content">
+        <div class="content-title">
+            <h2>Bootstrap相关优质项目推荐</h2>
+            <p>这些项目或者是对Bootstrap进行了有益的补充，或者是基于Bootstrap开发的</p>
+        </div>
+        <div class="container">
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/expo.png" />
+                <div class="item-content">
+                    <h5>优站精选</h5>
+                    <p>Bootstrap 网站实例</p>
+                    <div class="item-text">
+                        Bootstrap 优站精选频道收集了众多基于 Bootstrap 构建、设计精美的、有创意的网站。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/webpack.png" />
+                <div class="item-content">
+                    <h5>Webpack</h5>
+                    <p>是前端资源模块化管理和打包工具</p>
+                    <div class="item-text">
+                        Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/react.png" />
+                <div class="item-content">
+                    <h5>React</h5>
+                    <p>用于构建用户界面的 JavaScript 框架</p>
+                    <div class="item-text">
+                        React 起源于 Facebook 的内部项目，是一个用于构建用户界面的 JavaScript 库。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/typescript.png" />
+                <div class="item-content">
+                    <h5>TypeScript </h5>
+                    <p>中文手册</p>
+                    <div class="item-text">
+                        TypeScript 是由微软开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/expo.png" />
+                <div class="item-content">
+                    <h5>优站精选</h5>
+                    <p>Bootstrap 网站实例</p>
+                    <div class="item-text">
+                        Bootstrap 优站精选频道收集了众多基于 Bootstrap 构建、设计精美的、有创意的网站。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/webpack.png" />
+                <div class="item-content">
+                    <h5>Webpack</h5>
+                    <p>是前端资源模块化管理和打包工具</p>
+                    <div class="item-text">
+                        Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/react.png" />
+                <div class="item-content">
+                    <h5>React</h5>
+                    <p>用于构建用户界面的 JavaScript 框架</p>
+                    <div class="item-text">
+                        React 起源于 Facebook 的内部项目，是一个用于构建用户界面的 JavaScript 库。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/typescript.png" />
+                <div class="item-content">
+                    <h5>TypeScript </h5>
+                    <p>中文手册</p>
+                    <div class="item-text">
+                        TypeScript 是由微软开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/expo.png" />
+                <div class="item-content">
+                    <h5>优站精选</h5>
+                    <p>Bootstrap 网站实例</p>
+                    <div class="item-text">
+                        Bootstrap 优站精选频道收集了众多基于 Bootstrap 构建、设计精美的、有创意的网站。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/webpack.png" />
+                <div class="item-content">
+                    <h5>Webpack</h5>
+                    <p>是前端资源模块化管理和打包工具</p>
+                    <div class="item-text">
+                        Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/react.png" />
+                <div class="item-content">
+                    <h5>React</h5>
+                    <p>用于构建用户界面的 JavaScript 框架</p>
+                    <div class="item-text">
+                        React 起源于 Facebook 的内部项目，是一个用于构建用户界面的 JavaScript 库。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/typescript.png" />
+                <div class="item-content">
+                    <h5>TypeScript </h5>
+                    <p>中文手册</p>
+                    <div class="item-text">
+                        TypeScript 是由微软开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/expo.png" />
+                <div class="item-content">
+                    <h5>优站精选</h5>
+                    <p>Bootstrap 网站实例</p>
+                    <div class="item-text">
+                        Bootstrap 优站精选频道收集了众多基于 Bootstrap 构建、设计精美的、有创意的网站。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/webpack.png" />
+                <div class="item-content">
+                    <h5>Webpack</h5>
+                    <p>是前端资源模块化管理和打包工具</p>
+                    <div class="item-text">
+                        Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/react.png" />
+                <div class="item-content">
+                    <h5>React</h5>
+                    <p>用于构建用户界面的 JavaScript 框架</p>
+                    <div class="item-text">
+                        React 起源于 Facebook 的内部项目，是一个用于构建用户界面的 JavaScript 库。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/typescript.png" />
+                <div class="item-content">
+                    <h5>TypeScript </h5>
+                    <p>中文手册</p>
+                    <div class="item-text">
+                        TypeScript 是由微软开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/expo.png" />
+                <div class="item-content">
+                    <h5>优站精选</h5>
+                    <p>Bootstrap 网站实例</p>
+                    <div class="item-text">
+                        Bootstrap 优站精选频道收集了众多基于 Bootstrap 构建、设计精美的、有创意的网站。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/webpack.png" />
+                <div class="item-content">
+                    <h5>Webpack</h5>
+                    <p>是前端资源模块化管理和打包工具</p>
+                    <div class="item-text">
+                        Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/react.png" />
+                <div class="item-content">
+                    <h5>React</h5>
+                    <p>用于构建用户界面的 JavaScript 框架</p>
+                    <div class="item-text">
+                        React 起源于 Facebook 的内部项目，是一个用于构建用户界面的 JavaScript 库。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/typescript.png" />
+                <div class="item-content">
+                    <h5>TypeScript </h5>
+                    <p>中文手册</p>
+                    <div class="item-text">
+                        TypeScript 是由微软开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/expo.png" />
+                <div class="item-content">
+                    <h5>优站精选</h5>
+                    <p>Bootstrap 网站实例</p>
+                    <div class="item-text">
+                        Bootstrap 优站精选频道收集了众多基于 Bootstrap 构建、设计精美的、有创意的网站。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/webpack.png" />
+                <div class="item-content">
+                    <h5>Webpack</h5>
+                    <p>是前端资源模块化管理和打包工具</p>
+                    <div class="item-text">
+                        Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/react.png" />
+                <div class="item-content">
+                    <h5>React</h5>
+                    <p>用于构建用户界面的 JavaScript 框架</p>
+                    <div class="item-text">
+                        React 起源于 Facebook 的内部项目，是一个用于构建用户界面的 JavaScript 库。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/typescript.png" />
+                <div class="item-content">
+                    <h5>TypeScript </h5>
+                    <p>中文手册</p>
+                    <div class="item-text">
+                        TypeScript 是由微软开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/expo.png" />
+                <div class="item-content">
+                    <h5>优站精选</h5>
+                    <p>Bootstrap 网站实例</p>
+                    <div class="item-text">
+                        Bootstrap 优站精选频道收集了众多基于 Bootstrap 构建、设计精美的、有创意的网站。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/webpack.png" />
+                <div class="item-content">
+                    <h5>Webpack</h5>
+                    <p>是前端资源模块化管理和打包工具</p>
+                    <div class="item-text">
+                        Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/react.png" />
+                <div class="item-content">
+                    <h5>React</h5>
+                    <p>用于构建用户界面的 JavaScript 框架</p>
+                    <div class="item-text">
+                        React 起源于 Facebook 的内部项目，是一个用于构建用户界面的 JavaScript 库。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/typescript.png" />
+                <div class="item-content">
+                    <h5>TypeScript </h5>
+                    <p>中文手册</p>
+                    <div class="item-text">
+                        TypeScript 是由微软开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/expo.png" />
+                <div class="item-content">
+                    <h5>优站精选</h5>
+                    <p>Bootstrap 网站实例</p>
+                    <div class="item-text">
+                        Bootstrap 优站精选频道收集了众多基于 Bootstrap 构建、设计精美的、有创意的网站。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/webpack.png" />
+                <div class="item-content">
+                    <h5>Webpack</h5>
+                    <p>是前端资源模块化管理和打包工具</p>
+                    <div class="item-text">
+                        Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/react.png" />
+                <div class="item-content">
+                    <h5>React</h5>
+                    <p>用于构建用户界面的 JavaScript 框架</p>
+                    <div class="item-text">
+                        React 起源于 Facebook 的内部项目，是一个用于构建用户界面的 JavaScript 库。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn.jsdelivr.net/npm/@bootcss/www.bootcss.com@0.0.35/dist/img/typescript.png" />
+                <div class="item-content">
+                    <h5>TypeScript </h5>
+                    <p>中文手册</p>
+                    <div class="item-text">
+                        TypeScript 是由微软开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type = "text/javascript">
+        let hiddenList = document.querySelector('.hidden-list')
+        let hiddeBox = document.querySelector('.hidde-box')
+        let isTrue = false
+        hiddenList.onclick = function () {
+            if (!isTrue) {
+                hiddeBox.classList.remove('slideUp')
+                hiddeBox.classList.add('slideDwon')
+                isTrue = true
+            } else {
+                hiddeBox.classList.remove('slideDwon')
+                hiddeBox.classList.add('slideUp')
+                isTrue = false
+            }
+        }
+    </script>
+</body>
+
+</html>

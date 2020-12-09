@@ -1,0 +1,173 @@
+@charset "urf-8";
+
+body,
+div, 
+p, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+ul, 
+ol, 
+dl, 
+li, 
+dt, 
+dd, 
+table, 
+tbody, 
+thead, 
+tfoot,
+th,
+tr,
+td, 
+caption,
+form, 
+input, 
+select, 
+datalist,
+textarea,
+fieldset, 
+legend,
+button,
+label, 
+img, 
+blockquote,
+header,
+nav,
+footer,
+section,
+article,
+aside,
+details,
+figcaption,
+figure,
+hgroup,
+canvas,
+video,
+audio {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none!important;
+}
+
+body {
+    color: #333;
+    background-color: #FFF;
+    /* 解决ios滑动很卡的问题 */
+    -webkit-overflow-scrolling : touch;
+}
+
+i, em {
+    font-style: normal;
+}
+
+input, button, select, textarea {
+    border: none;
+    outline: none;
+    /* 苹果和安卓的按钮样式不同，去掉样式重新设置 */
+    -webkit-appearance: none;
+}
+
+button, i, em {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: #333;
+    text-decoration: none;
+    background-color: none;
+    /* 解决点击a标签链接时的蓝色背景颜色，将他们都设置为透明 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    display: block;
+    width: 100%;
+    -ms-interpolation-mode: bicubic; /* 兼容IE浏览器缩放图片导致失真 */
+}
+
+a, img {
+    /* 防止点击链接或图片弹出菜单 */
+    -webkit-touch-callout: none;
+}
+
+input:-moz-placeholder { /* Firefox4 to 18 */
+    color: #999;
+}
+
+input::-moz-placeholder { /* Firefox4 19+ */
+    color: #999;
+}
+
+input:-ms-input-placeholder { /* 兼容IE浏览器 */
+    color: #999;
+}
+
+input::-webkit-input-placeholder { /* Chrome and  Safari */
+    color: #999;
+}
+
+input:focus::-webkit-input-placeholder{ /* 获取焦点时的输入就文本样式 */
+    color:#EEEEEE;
+}
+
+input[type=checkbox] {
+    -webkit-appearance: checkbox;
+}
+
+/* 禁止缩放表单 */
+input[type="submit"], input[type="reset"], input[type="button"], input {
+    resize: none;
+    border: none;
+}
+
+/* 单行溢出 */
+.oneline-overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 多行溢出 */
+.multiline-overflow {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

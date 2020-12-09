@@ -1,0 +1,55 @@
+@charset 'uft-8';
+/* 4K */
+@media only screen and (max-width: 3840px) {}
+
+/* 2K */
+@media only screen and (max-width: 2560px) {}
+@media only screen and (max-width: 2160px) {}
+
+/* 普通电脑屏幕分辨率 */
+@media only screen and (max-width: 1920px) {}
+@media only screen and (max-width: 1680px) {}
+@media only screen and (max-width: 1440px) {}
+@media only screen and (max-width: 1366px) {}
+@media only screen and (max-width: 1280px) {}
+@media only screen and (max-width: 1152px) {}
+@media only screen and (max-width: 1080px) {}
+
+/* 苹果ipad Pro */
+@media only screen and (max-width: 1024px) {}
+
+/* 平板以及手机分辨率 */
+@media only screen and (max-width: 980px) {}
+@media only screen and (max-width: 800px) {}
+
+/* 苹果ipad */
+@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 750px) {}
+@media only screen and (max-width: 720px) {}
+@media only screen and (max-width: 640px) {}
+@media only screen and (max-width: 540px) {}
+@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 424px) {}
+
+/* 苹果6/7/8P */
+@media only screen and (max-width: 414px) {}
+@media only screen and (max-width: 411px) {}
+@media only screen and (max-width: 384px) {}
+
+/* 苹果6/7/8/X */
+@media only screen and (max-width: 375px) {}
+@media only screen and (max-width: 360px) {}
+
+/* 苹果5/SE */
+@media only screen and (max-width: 320px) {}
+@media only screen and (max-width: 240px) {}
+
+
+/* 推荐PC分辨率断点 */
+@media only screen and (max-width: 1200px) {}
+
+@media only screen and (max-width: 992px) {}
+
+@media only screen and (max-width: 768px) {}
+
+@media only screen and (max-width: 540px) {}

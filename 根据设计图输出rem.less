@@ -1,0 +1,20 @@
+@charset 'uft-8';
+
+// 计算rem的基准字体
+@rem-base-font-size: 100px;
+
+// UI设计图的分辨率宽度
+@UI-width: 750px;
+
+// 各个设备的分辨率宽度
+@device-widths:  240px, 320px, 360px, 375px, 384px, 411px, 414px, 424px, 480px, 540px, 640px, 720px, 750px, 768px, 800px, 980px, 1024px, 1080px, 1152px, 1280px, 1366px, 1440px, 1600px, 1680px, 1920px, 2160px, 2560px, 3840px;
+.outMedia(@index) when (@index <= length(@device-widths)){
+    @media only screen and (min-width: extract(@device-widths, @index)) {
+        html {
+            font-size: extract(@device-widths, @index) * @rem-base-font-size / @UI-width;
+        }
+    }
+    .outMedia(@index + 1);
+}
+
+.outMedia(1);

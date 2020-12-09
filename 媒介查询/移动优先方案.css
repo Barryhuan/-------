@@ -1,0 +1,66 @@
+@charset 'uft-8';
+
+/* 平板以及手机分辨率 */
+@media only screen and (min-width: 240px) {}
+
+/* 苹果5/SE */
+@media only screen and (min-width: 320px) {}
+
+@media only screen and (min-width: 360px) {}
+
+/* 苹果6/7/8/X */
+@media only screen and (min-width: 375px) {}
+
+@media only screen and (min-width: 384px) {}
+@media only screen and (min-width: 411px) {}
+
+/* 苹果6/7/8P */
+@media only screen and (min-width: 414px) {}
+
+@media only screen and (min-width: 424px) {}
+@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 540px) {}
+@media only screen and (min-width: 640px) {}
+@media only screen and (min-width: 720px) {}
+@media only screen and (min-width: 750px) {}
+
+/* 苹果ipad */
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 800px) {}
+@media only screen and (min-width: 980px) {}
+
+/* 普通电脑屏幕分辨率 */
+/* 苹果ipad Pro */
+@media only screen and (min-width: 1024px) {}
+
+@media only screen and (min-width: 1080px) {}
+@media only screen and (min-width: 1152px) {}
+@media only screen and (min-width: 1280px) {}
+@media only screen and (min-width: 1366px) {}
+@media only screen and (min-width: 1440px) {}
+@media only screen and (min-width: 1680px) {}
+@media only screen and (min-width: 1920px) {}
+
+/* 2K */
+@media only screen and (min-width: 2160px) {}
+@media only screen and (min-width: 2560px) {}
+
+/* 4K */
+@media only screen and (min-width: 3840px) {}
+
+/* 推荐移动优先分辨率断点 */
+@media only screen and (max-width: 540px) {}
+@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 992px) {}
+@media only screen and (max-width: 1200px) {}
+
+/* 搭配rem使用 */
+
+@media only screen and (max-width: 540px) {}
+
+@media only screen and (max-width: 768px) {}
+
+@media only screen and (max-width: 992px) {}
+
+@media only screen and (max-width: 1200px) {}
